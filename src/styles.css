@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+/* ensure full-height column layout so footer sits at bottom of content */
+html, body, app-root {
+  height: 100%;
+  margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+/* main content fixed to viewport minus footer height (64px) */
+main, .app-content {
+  box-sizing: border-box;
+  overflow: hidden; /* prevent internal scrolling */
+  flex: none;       /* do not grow so exact calc() is respected */
+}
